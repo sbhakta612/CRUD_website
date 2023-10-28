@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address Book</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <body>
+      <div id="container">
+        <h1>Contact Details</h1>
+        <div id="input-container">
+          <input type="text" id="name-input" placeholder="Name" />
+          <input type="email" id="email-input" placeholder="Email" />
+          <input type="text" id="number-input" placeholder="Number" />
+          <button id="button-add">Add</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Number</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+        <div id="update-container">
+          <input type="text" id="update-name-input" />
+          <input type="text" id="update-email-input" />
+          <input type="text" id="update-number-input" />
+          <button id="button-update">Update</button>
+          <button id="button-cancel">Cancel</button>
+        </div>
+      </div>
+      <script src="./script.js"></script>
+    </body>
+  </body>
+</html>

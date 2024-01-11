@@ -10,6 +10,7 @@ const updateNumberInput = document.getElementById("update-number-input");
 const updateBtn = document.getElementById("button-update");
 const cancelBtn = document.getElementById("button-cancel");
 let users = JSON.parse(localStorage.getItem("users")) || [];
+
 let currentUserId = null;
 const validRegex =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;

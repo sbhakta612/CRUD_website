@@ -1,23 +1,20 @@
+const express = require("express");
+const app = express();
+const port = 3000;
 const mysql = require("mysql2");
 const connection = mysql.createConnection({
   host: "127.0.0.1",
+  port: 3306,
   user: "root",
   password: "root",
   database: "AddressBook",
 });
+app.use(express.json());
+const path = require("node:path");
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
-async function getUserById(id) {
-  const result = await connection
-    .promise()
-    .query("SELECT * FROM Contacts WHERE name = ?", [id]);
-  return result[0];
-}
-
-async function getUsers() {
-  const result = await connection.promise().query("SELECT * FROM Contacts");
-  const rows = result[0];
-
-  return rows;
-}
-
-module.exports = { getUserById, getUsers };
+app.listen(port, () => {
+  console.log(`App started on ${port}`);
+});
